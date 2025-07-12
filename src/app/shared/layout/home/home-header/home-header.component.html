@@ -1,0 +1,53 @@
+<div class="flex flex-col w-full">
+  <nav class="w-full p-4 border-b-1 border-b-custom-border">
+    <!-- Versión tablet, ordenador -->
+    <ul class="hidden sm:flex justify-between items-center w-full">
+      <li
+        class="flex items-center hover:scale-105 transition-all duration-300"
+        [routerLink]="['/home']"
+      >
+        <mat-icon class="w-10 h-10">school</mat-icon>
+      </li>
+      <div class="flex justify-end gap-5">
+        <li>
+          <app-button
+            [type]="'secondary'"
+            [to]="['/login']"
+            [text]="'Iniciar sesión'"
+          ></app-button>
+        </li>
+        <li>
+          <app-button [to]="['/signup']" [text]="'Registrarse'"></app-button>
+        </li>
+      </div>
+    </ul>
+
+    <!-- Versión móvil -->
+    <ul class="flex sm:hidden justify-between items-center w-full">
+      <li
+        class="flex items-center hover:scale-105 transition-all duration-300"
+        [routerLink]="['/home']"
+      >
+        <mat-icon class="w-10 h-10">school</mat-icon>
+      </li>
+      <div
+        class="flex justify-end gap-5 hover:bg-custom-primary-light hover:scale-105 text-custom-secondary p-2 rounded-full transition-all duration-300"
+        (click)="showNavList = !showNavList"
+      >
+        <mat-icon>menu</mat-icon>
+      </div>
+    </ul>
+  </nav>
+  @if (showNavList) {
+  <ul class="flex flex-col sm:hidden items-center">
+    <app-header-li-nav
+      [to]="['/login']"
+      [text]="'Iniciar sesión'"
+    ></app-header-li-nav>
+    <app-header-li-nav
+      [to]="['/signup']"
+      [text]="'Registrarse'"
+    ></app-header-li-nav>
+  </ul>
+  }
+</div>

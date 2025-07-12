@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+app-root,
+app-home,
+app-home-header,
+app-home-footer,
+app-landing-page,
+app-login,
+app-signup,
+app-header-li-nav {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@theme {
+  --color-custom-primary: rgb(186, 203, 238);
+  --color-custom-primary-light: rgb(220, 230, 247);
+  --color-custom-primary-dark: rgb(140, 160, 210);
+  --color-custom-secondary: rgb(26, 35, 68);
+  --color-custom-secondary-light: rgb(120, 130, 170);
+  --color-custom-accent: rgb(110, 111, 118);
+  --color-custom-border: rgb(224, 231, 241);
+}

@@ -1,3 +1,33 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { LandingPageComponent } from './pages/home/landing-page/landing-page.component';
+import { SignupComponent } from './pages/home/signup/signup.component';
+import { LoginComponent } from './pages/home/login/login.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { DashboardHomeComponent } from './pages/dashboard/dashboard-home/dashboard-home.component';
+import { DashboardSettingsComponent } from './pages/dashboard/dashboard-settings/dashboard-settings.component';
+import { DashboardMailboxComponent } from './pages/dashboard/dashboard-mailbox/dashboard-mailbox.component';
+import { ErrorComponent } from './pages/error/error.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  {
+    path: '',
+    component: HomeComponent,
+    children: [
+      { path: 'home', component: LandingPageComponent },
+      { path: 'signup', component: SignupComponent },
+      { path: 'login', component: LoginComponent },
+    ],
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      { path: '', component: DashboardHomeComponent },
+      { path: 'settings', component: DashboardSettingsComponent },
+      { path: 'mailbox', component: DashboardMailboxComponent },
+    ],
+  },
+  { path: '**', component: ErrorComponent },
+];
