@@ -10,5 +10,6 @@ import { RouterLink } from '@angular/router';
 export class ButtonComponent {
   @Input() text = '';
   @Input() to: string[] = [];
-  @Input() type: 'primary' | 'secondary' = 'primary';
+  @Input() type: 'button' | 'submit' = 'button';
+  @Input() isPrimary = true;
 }

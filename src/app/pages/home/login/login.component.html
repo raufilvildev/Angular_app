@@ -1,7 +1,26 @@
 <form
   [formGroup]="loginForm"
-  class="mx-auto flex flex-col gap-4 w-full sm:max-w-100 p-5"
+  (ngSubmit)="onSubmit()"
+  class="mx-auto flex flex-col gap-8 w-full sm:max-w-100 p-5"
 >
-  <app-input [name]="'email_username'"></app-input>
-  <app-input [name]="'password'"></app-input>
+  <app-input
+    [label]="'Nombre de usuario'"
+    [id]="'username'"
+    [placeholder]="'Escriba su nombre usuario'"
+    formControlName="username"
+  ></app-input>
+  <app-input
+    [label]="'Contraseña'"
+    [type]="'password'"
+    [id]="'password'"
+    [placeholder]="'Escriba su contraseña'"
+    formControlName="password"
+  ></app-input>
+  <a
+    class="mx-auto text-custom-secondary hover:underline hover:font-semibold hover:scale-105 transition-all duration-300 cursor-pointer"
+    >¿Has olvidado la contraseña?</a
+  >
+  <div class="mx-auto">
+    <app-button [type]="'submit'" [text]="'Iniciar sesión'"></app-button>
+  </div>
 </form>

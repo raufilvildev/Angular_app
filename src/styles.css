@@ -31,5 +31,6 @@ body {
   --color-custom-secondary: rgb(26, 35, 68);
   --color-custom-secondary-light: rgb(120, 130, 170);
   --color-custom-accent: rgb(110, 111, 118);
+  --color-custom-accent-light: rgb(167, 171, 180);
   --color-custom-border: rgb(224, 231, 241);
 }
