@@ -1,7 +1,7 @@
 <div
   class="md:p-5 flex flex-col min-h-screen border-1 border-custom-border md:w-75"
 >
-  <ul class="flex md:flex-col gap-2">
+  <ul class="flex-1 flex md:flex-col gap-2">
     <div>
       <app-dashboard-sidebar-profile
         [routerLink]="['/dashboard/settings']"
@@ -22,6 +22,13 @@
         [routerLink]="['/dashboard/courses']"
         [text]="'Cursos'"
         [icon]="'school'"
+      ></app-dashboard-sidebar-li>
+    </div>
+    <div class="flex-1 flex flex-col justify-end">
+      <app-dashboard-sidebar-li
+        [icon]="'logout'"
+        [text]="'Cerrar sesión'"
+        (click)="logout()"
       ></app-dashboard-sidebar-li>
     </div>
   </ul>
