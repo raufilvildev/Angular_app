@@ -26,16 +26,10 @@ export class InputComponent implements ControlValueAccessor {
   @Input() placeholder = '';
   @Input() control: AbstractControl<any> | null = null;
   @Input() passwordMissmatchError = '';
+  @Input() icon = '';
 
   showPassword = false;
 
-  iconsDictionary: { [key: string]: string } = {
-    username: 'person',
-    email: 'mail',
-    password: '',
-  };
-
-  icon = '';
   value: string = '';
   disabled = false;
 
@@ -83,11 +77,5 @@ export class InputComponent implements ControlValueAccessor {
       this.type = 'password';
       this.icon = 'visibility';
     }
-  }
-
-  ngOnInit() {
-    this.icon = ['password', 'passwordConfirm'].includes(this.id)
-      ? 'visibility'
-      : this.iconsDictionary[this.id];
   }
 }

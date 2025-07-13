@@ -25,6 +25,7 @@
         [placeholder]="'Escriba su correo electrónico'"
         [control]="signupForm.get('email')"
         formControlName="email"
+        [icon]="'email'"
       ></app-input>
     </div>
     <div class="flex-1 flex flex-col gap-5">
@@ -34,6 +35,7 @@
         [placeholder]="'Escriba su nombre usuario'"
         [control]="signupForm.get('username')"
         formControlName="username"
+        [icon]="'person'"
       ></app-input>
       <app-input
         [label]="'Contraseña'"
@@ -43,6 +45,7 @@
         [control]="signupForm.get('password')"
         formControlName="password"
         [passwordMissmatchError]="passwordMissmatchError"
+        [icon]="'visibility'"
       ></app-input>
       <app-input
         [label]="'Confirmación de contraseña'"
@@ -52,6 +55,7 @@
         [control]="signupForm.get('passwordConfirm')"
         formControlName="passwordConfirm"
         [passwordMissmatchError]="passwordMissmatchError"
+        [icon]="'visibility'"
       ></app-input>
     </div>
   </div>

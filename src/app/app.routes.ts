@@ -12,6 +12,7 @@ import {
   authenticationGuardPrivate,
   authenticationGuardPublic,
 } from './core/guards/authentication.guard';
+import { DashboardCoursesComponent } from './pages/dashboard/dashboard-courses/dashboard-courses.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -33,6 +34,7 @@ export const routes: Routes = [
       { path: '', component: DashboardHomeComponent },
       { path: 'settings', component: DashboardSettingsComponent },
       { path: 'mailbox', component: DashboardMailboxComponent },
+      { path: 'courses', component: DashboardCoursesComponent },
     ],
   },
   { path: '**', component: ErrorComponent },

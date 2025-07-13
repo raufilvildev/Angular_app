@@ -46,7 +46,9 @@ export class LoginComponent {
 
       this.router.navigate(['/dashboard']);
     } catch ({ error }: any) {
-      this.loginFormError = error.message;
+      this.loginFormError =
+        error.message ||
+        'Ha ocurrido un error inesperado. Vuelve a intentarlo más tarde.';
     }
   }
 }
