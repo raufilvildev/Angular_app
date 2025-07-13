@@ -1,6 +1,10 @@
 import { Component, Input, forwardRef } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  AbstractControl,
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -20,6 +24,8 @@ export class InputComponent implements ControlValueAccessor {
   @Input() label = '';
   @Input() type: 'text' | 'email' | 'password' | 'date' = 'text';
   @Input() placeholder = '';
+  @Input() control: AbstractControl<any> | null = null;
+  @Input() passwordMissmatchError = '';
 
   showPassword = false;
 

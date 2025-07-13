@@ -9,18 +9,21 @@
         [label]="'Nombre'"
         [id]="'firstName'"
         [placeholder]="'Escriba su nombre'"
+        [control]="signupForm.get('firstName')"
         formControlName="firstName"
       ></app-input>
       <app-input
         [label]="'Apellidos'"
         [id]="'lastName'"
         [placeholder]="'Escriba sus apellidos'"
-        formControlName="username"
+        [control]="signupForm.get('lastName')"
+        formControlName="lastName"
       ></app-input>
       <app-input
         [label]="'Correo electrónico'"
         [id]="'email'"
         [placeholder]="'Escriba su correo electrónico'"
+        [control]="signupForm.get('email')"
         formControlName="email"
       ></app-input>
     </div>
@@ -29,6 +32,7 @@
         [label]="'Nombre de usuario'"
         [id]="'username'"
         [placeholder]="'Escriba su nombre usuario'"
+        [control]="signupForm.get('username')"
         formControlName="username"
       ></app-input>
       <app-input
@@ -36,18 +40,31 @@
         [type]="'password'"
         [id]="'password'"
         [placeholder]="'Escriba su contraseña'"
+        [control]="signupForm.get('password')"
         formControlName="password"
+        [passwordMissmatchError]="passwordMissmatchError"
       ></app-input>
       <app-input
-        [label]="'Contraseña'"
+        [label]="'Confirmación de contraseña'"
         [type]="'password'"
         [id]="'passwordConfirm'"
         [placeholder]="'Escriba de nuevo su contraseña'"
+        [control]="signupForm.get('passwordConfirm')"
         formControlName="passwordConfirm"
+        [passwordMissmatchError]="passwordMissmatchError"
       ></app-input>
     </div>
   </div>
-  <div class="mx-auto">
+  <div class="mx-auto flex flex-col items-center gap-2">
+    @if (signupFormError) {
+    <p class="text-red-700 text-sm text-center italic">
+      {{ signupFormError }}
+    </p>
+    } @if (passwordMissmatchError) {
+    <p class="text-red-700 text-sm text-center italic">
+      {{ passwordMissmatchError }}
+    </p>
+    }
     <app-button [type]="'submit'" [text]="'Registrarse'"></app-button>
   </div>
 </form>

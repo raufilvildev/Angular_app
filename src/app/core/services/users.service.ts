@@ -12,7 +12,7 @@ import { Message } from '../interfaces/shared/Message.interface';
   providedIn: 'root',
 })
 export class UsersService {
-  private endpoint = `${environment.host}/api/user`;
+  private endpoint = `${environment.host}/api/users`;
   private httpClient = inject(HttpClient);
 
   get() {
@@ -21,7 +21,7 @@ export class UsersService {
 
   create(userSignupDto: UserSignupDto) {
     return lastValueFrom(
-      this.httpClient.post<Token>(`${this.endpoint}/login`, userSignupDto)
+      this.httpClient.post<Token>(`${this.endpoint}/signup`, userSignupDto)
     );
   }
 
