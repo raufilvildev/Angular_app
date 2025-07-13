@@ -8,7 +8,7 @@
     @if (icon) {
     <mat-icon
       class="custom-icon absolute top-1/2 left-2 transform -translate-y-1/2"
-      [class.cursor-pointer]="id === 'password'"
+      [class.cursor-pointer]="['password', 'passwordConfirm'].includes(id)"
       (click)="togglePasswordVisibility()"
       >{{ icon }}</mat-icon
     >

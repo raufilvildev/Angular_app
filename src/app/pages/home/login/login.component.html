@@ -20,7 +20,14 @@
     class="mx-auto text-custom-secondary hover:underline hover:font-semibold hover:scale-105 transition-all duration-300 cursor-pointer"
     >¿Has olvidado la contraseña?</a
   >
-  <div class="mx-auto">
-    <app-button [type]="'submit'" [text]="'Iniciar sesión'"></app-button>
+  <div class="flex flex-col gap-5">
+    @if (loginFormError) {
+    <p class="text-red-700 text-sm text-center italic">
+      {{ loginFormError }}
+    </p>
+    }
+    <div class="mx-auto">
+      <app-button [type]="'submit'" [text]="'Iniciar sesión'"></app-button>
+    </div>
   </div>
 </form>
