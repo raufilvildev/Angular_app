@@ -36,10 +36,14 @@ export class LoginComponent {
     }
 
     try {
-      const { token } = await this.authenticationService.login(
-        this.loginForm.value as UserLoginDto
-      );
-      localStorage.setItem('refreshToken', token);
+      const { refreshToken, accessToken } =
+        await this.authenticationService.login(
+          this.loginForm.value as UserLoginDto
+        );
+
+      localStorage.setItem('refreshToken', refreshToken);
+      localStorage.setItem('accessToken', accessToken);
+
       this.router.navigate(['/dashboard']);
     } catch ({ error }: any) {
       this.loginFormError = error.message;

@@ -17,4 +17,12 @@ export class AuthenticationService {
       this.httpClient.post<Token>(`${this.endpoint}/login`, userLoginDto)
     );
   }
+
+  refreshAccessToken(refreshToken: string) {
+    return lastValueFrom(
+      this.httpClient.post<Token>(`${this.endpoint}/refresh_access_token`, {
+        refreshToken,
+      })
+    );
+  }
 }

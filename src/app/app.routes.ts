@@ -8,12 +8,17 @@ import { DashboardHomeComponent } from './pages/dashboard/dashboard-home/dashboa
 import { DashboardSettingsComponent } from './pages/dashboard/dashboard-settings/dashboard-settings.component';
 import { DashboardMailboxComponent } from './pages/dashboard/dashboard-mailbox/dashboard-mailbox.component';
 import { ErrorComponent } from './pages/error/error.component';
+import {
+  authenticationGuardPrivate,
+  authenticationGuardPublic,
+} from './core/guards/authentication.guard';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   {
     path: '',
     component: HomeComponent,
+    canActivate: [authenticationGuardPublic],
     children: [
       { path: 'home', component: LandingPageComponent },
       { path: 'signup', component: SignupComponent },
@@ -23,6 +28,7 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [authenticationGuardPrivate],
     children: [
       { path: '', component: DashboardHomeComponent },
       { path: 'settings', component: DashboardSettingsComponent },

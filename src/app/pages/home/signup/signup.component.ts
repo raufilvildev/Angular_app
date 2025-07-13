@@ -79,10 +79,13 @@ export class SignupComponent {
     }
 
     try {
-      const { token } = await this.usersService.create(
+      const { refreshToken, accessToken } = await this.usersService.create(
         userSignupDto as UserSignupDto
       );
-      localStorage.setItem('refreshToken', token);
+
+      localStorage.setItem('refreshToken', refreshToken);
+      localStorage.setItem('accessToken', accessToken);
+
       this.router.navigate(['/dashboard']);
     } catch ({ status, error }: any) {
       if ([401, 409].includes(status)) {
