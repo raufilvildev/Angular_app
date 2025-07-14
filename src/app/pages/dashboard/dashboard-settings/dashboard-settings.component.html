@@ -1,1 +1,42 @@
-<p>dashboard-settings works!</p>
+<form
+  class="w-full md:max-w-150 p-10 flex flex-col gap-5"
+  [formGroup]="updateForm"
+  (ngSubmit)="onSubmit()"
+>
+  <h2 class="text-3xl font-bold">Ajustes de usuario</h2>
+  <div class="flex flex-col gap-5">
+    <app-input
+      [label]="'Nombre'"
+      formControlName="firstName"
+      [id]="'firstName'"
+      [placeholder]="'Escriba su nombre'"
+      [control]="updateForm.get('firstName')"
+    ></app-input>
+    <app-input
+      [label]="'Apellidos'"
+      formControlName="lastName"
+      [id]="'lastName'"
+      [placeholder]="'Escriba sus apellidos'"
+      [control]="updateForm.get('lastName')"
+    ></app-input>
+    <app-input
+      [label]="'Nombre de usuario'"
+      formControlName="username"
+      [id]="'username'"
+      [placeholder]="'Escriba su nombre de usuario'"
+      [control]="updateForm.get('username')"
+    ></app-input>
+  </div>
+  <div class="flex flex-col gap-5">
+    @if (updateFormError) {
+    <p class="text-red-700 text-sm text-center italic">
+      {{ updateFormError }}
+    </p>
+    }
+    <app-button
+      [type]="'submit'"
+      class="mx-auto"
+      [text]="'Actualizar datos de usuario'"
+    ></app-button>
+  </div>
+</form>

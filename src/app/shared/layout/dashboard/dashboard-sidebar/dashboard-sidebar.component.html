@@ -1,35 +1,60 @@
-<div
-  class="md:p-5 flex flex-col min-h-screen border-1 border-custom-border md:w-75"
+<!-- Versión móvil -->
+<ul
+  class="md:hidden flex p-2 border-b-1 justify-between items-center border-b-custom-border"
 >
-  <ul class="flex-1 flex md:flex-col gap-2">
-    <div>
-      <app-dashboard-sidebar-profile
-        [routerLink]="['/dashboard/settings']"
-      ></app-dashboard-sidebar-profile>
-    </div>
-    <div class="flex md:flex-col gap-2">
-      <app-dashboard-sidebar-li
-        [routerLink]="['']"
-        [text]="'Inicio'"
-        [icon]="'home'"
-      ></app-dashboard-sidebar-li>
-      <app-dashboard-sidebar-li
-        [routerLink]="['/dashboard/mailbox']"
-        [text]="'Buzón'"
-        [icon]="'markunread_mailbox'"
-      ></app-dashboard-sidebar-li>
-      <app-dashboard-sidebar-li
-        [routerLink]="['/dashboard/courses']"
-        [text]="'Cursos'"
-        [icon]="'school'"
-      ></app-dashboard-sidebar-li>
-    </div>
-    <div class="flex-1 flex flex-col justify-end">
-      <app-dashboard-sidebar-li
-        [icon]="'logout'"
-        [text]="'Cerrar sesión'"
-        (click)="logout()"
-      ></app-dashboard-sidebar-li>
-    </div>
-  </ul>
-</div>
+  <app-dashboard-sidebar-profile
+    [routerLink]="['/dashboard/settings']"
+  ></app-dashboard-sidebar-profile>
+  <div class="flex gap-5">
+    <app-dashboard-sidebar-li
+      [routerLink]="['']"
+      [text]="'Inicio'"
+      [icon]="'home'"
+    ></app-dashboard-sidebar-li>
+    <app-dashboard-sidebar-li
+      [routerLink]="['/dashboard/mailbox']"
+      [text]="'Buzón'"
+      [icon]="'markunread_mailbox'"
+    ></app-dashboard-sidebar-li>
+    <app-dashboard-sidebar-li
+      [routerLink]="['/dashboard/courses']"
+      [text]="'Cursos'"
+      [icon]="'school'"
+    ></app-dashboard-sidebar-li>
+  </div>
+  <app-dashboard-sidebar-li
+    [icon]="'logout'"
+    [text]="'Cerrar sesión'"
+    (click)="logout()"
+  ></app-dashboard-sidebar-li>
+</ul>
+<!-- Versión escritorio -->
+<ul
+  class="w-75 p-5 hidden md:flex flex-col gap-2 justify-between border-r-1 border-r-custom-border min-h-screen"
+>
+  <div class="flex flex-col gap-2">
+    <app-dashboard-sidebar-profile
+      [routerLink]="['/dashboard/settings']"
+    ></app-dashboard-sidebar-profile>
+    <app-dashboard-sidebar-li
+      [routerLink]="['']"
+      [text]="'Inicio'"
+      [icon]="'home'"
+    ></app-dashboard-sidebar-li>
+    <app-dashboard-sidebar-li
+      [routerLink]="['/dashboard/mailbox']"
+      [text]="'Buzón'"
+      [icon]="'markunread_mailbox'"
+    ></app-dashboard-sidebar-li>
+    <app-dashboard-sidebar-li
+      [routerLink]="['/dashboard/courses']"
+      [text]="'Cursos'"
+      [icon]="'school'"
+    ></app-dashboard-sidebar-li>
+  </div>
+  <app-dashboard-sidebar-li
+    [icon]="'logout'"
+    [text]="'Cerrar sesión'"
+    (click)="logout()"
+  ></app-dashboard-sidebar-li>
+</ul>

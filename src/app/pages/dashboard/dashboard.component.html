@@ -1,6 +1,7 @@
 <div class="flex flex-col md:flex-row items-between min-h-screen w-full">
-  <app-dashboard-sidebar></app-dashboard-sidebar>
-  <main class="flex-1 flex items-center">
+  <app-dashboard-sidebar class="hidden md:block"></app-dashboard-sidebar>
+  <main class="flex-1 flex">
     <router-outlet></router-outlet>
   </main>
+  <app-dashboard-sidebar class="block md:hidden"></app-dashboard-sidebar>
 </div>

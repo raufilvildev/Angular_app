@@ -11,7 +11,7 @@ import { UsersService } from '../../../../../core/services/users.service';
 export class DashboardSidebarProfileComponent {
   private usersService = inject(UsersService);
 
-  user!: UserResponseDto;
+  user?: UserResponseDto;
 
   async ngOnInit() {
     try {

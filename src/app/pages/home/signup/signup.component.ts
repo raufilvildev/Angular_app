@@ -88,7 +88,7 @@ export class SignupComponent {
 
       this.router.navigate(['/dashboard']);
     } catch ({ status, error }: any) {
-      if ([401, 409].includes(status)) {
+      if (status === 409) {
         this.signupFormError = error.message;
         return;
       }
